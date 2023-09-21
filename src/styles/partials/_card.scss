@@ -1,0 +1,72 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    position: relative;
+    border-radius: 6px;
+    width: 100%;
+    min-width: 260px;
+    height: 380px;
+    text-decoration: none;
+    color: $primary-white;
+
+    &__background {
+        background-color: #dfdfdf;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        padding: 28px;
+        gap: 8px;
+        z-index: 2;
+
+        &-title {
+            font-size: 28px;
+            font-weight: 500;
+        }
+
+        &-description {
+            font-size: 16px;
+            font-weight: 300;
+        }
+    }
+
+    &::after {
+        background-image: linear-gradient(360deg, $card-mask 0%, rgba(49, 51, 65, 0) 70.08%);
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    &::before {
+        background-image: linear-gradient(360deg, $card-mask 36.98%,rgba(49,51,65,0) 100.42%);
+        bottom: 0;
+        content: "";
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        opacity: 0;
+        transition: opacity .3s ease-in-out, background-image .2s;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .card {
+        height: 320px;
+    }
+}

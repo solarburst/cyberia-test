@@ -1,0 +1,22 @@
+.link {
+    text-decoration: none;
+    color: $text-white;
+    font-size: 18px;
+    font-weight: 300;
+
+    &:after {
+        content: "";
+        display: block;
+        margin-top: 2px;
+        margin-left: auto;
+        margin-right: auto;
+        height: 1px;
+        width: 0px;
+        background-color: $primary-blue;
+    }
+    
+    &:hover::after {
+        width: 100%;
+        transition: all 0.4s;
+    }
+}

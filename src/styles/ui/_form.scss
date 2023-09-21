@@ -1,0 +1,207 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    &__control {
+        position: relative;
+        margin-bottom: 36px;
+
+        &-input {
+            border: 1px solid $text-gray;
+            border-radius: 8px;
+            outline: none;
+            padding: 16px 0 16px 12px;
+            transition: border-color .2s;
+            background-color: transparent;
+            font-size: 14px;
+            font-weight: 300;
+            color: $text-white;
+            width: 100%;
+
+            &:-webkit-autofill {
+                -webkit-box-shadow: 0 0 0 1000px $contact-bg inset !important;
+                -webkit-text-fill-color: $text-white !important;
+                color: $text-white !important;
+            }
+        }
+
+        &-error {
+            color: $form-error;
+            display: none;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        &-input.error ~ &-error {
+            display: block;
+        }
+
+        &-input.error ~ &-label {
+            color: $form-error;
+        }
+
+        .error {
+            border: 1px solid $form-error;
+            color: $form-error;
+        }
+
+        &-input:focus ~ &-label, &-input.active ~ &-label {
+            top: -8px;
+            background-color: $contact-bg;
+        }
+    }
+
+    &__control-label {
+        font-size: 14px;
+        font-weight: 300;
+        color: $text-white;
+        background-color: transparent;
+        position: absolute;
+        left: 12px;
+        top: 16px;
+        transition: all .3s ease;
+        padding: 0 12px;
+    }
+
+    &__message {
+        border: 1px solid $text-gray;
+        border-radius: 8px;
+        position: relative;
+
+        &-textarea {
+            width: calc(100% - 12px);
+            background-color: transparent;
+            border: none;
+            outline: none;
+            resize: none;
+            padding-left: 20px;
+            font-size: 14px;
+            font-weight: 300;
+            color: $text-white;
+            overflow: auto;
+            overflow-x: hidden;
+            margin: 20px 0;
+            height: 88px;
+        }
+
+        &-files {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            gap: 10px;
+            margin: 0 0 20px 20px;
+        }
+
+        &-file {
+            display: none;
+        }
+
+        &-icon {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            cursor: pointer;
+        }
+
+        &-error {
+            color: $form-error;
+            margin-top: 8px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+
+        &-textarea:focus ~ .form__control-label, &-textarea.active ~ .form__control-label {
+            top: -8px;
+            background-color: $contact-bg;
+        }
+
+        &-textarea::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &-textarea::-webkit-scrollbar-thumb {
+            background-color: $text-gray;
+            border: none;
+            border-radius: 9px;
+        }
+
+        &-textarea::-webkit-scrollbar-track {
+            border-radius: 9px;
+            background-color: $text-white;
+        }
+    }
+
+    &__button {
+        padding: 20px 84px;
+        border: none;
+        outline: none;
+        border-radius: 35px;
+        background-color: $primary-blue;
+        font-size: 16px;
+        font-weight: 300;
+        color: $primary-white;
+        cursor: pointer;
+        transition: ease-in-out 300ms;
+
+        &:hover {
+            background-color: $primary-blue-hover;
+        }
+    }
+
+    &__agreement {
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 22px;
+        color: $text-white;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 36px;
+        gap: 40px;
+    }
+
+    &__status {
+        margin-top: 32px;
+        font-size: 18px;
+        font-weight: 500;
+
+        &.error {
+            color: $form-error;
+        }
+
+        &.success {
+            color: $form-success;
+        }
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .form__wrapper {
+        flex-direction: column;
+    }
+
+    .form__button {
+        width: 100%;
+    }
+
+    .form__agreement {
+        text-align: center;
+    }
+
+    .form__message-files {
+        margin: 0 20px 20px 20px;
+    }
+
+    .form__message-textarea {
+        height: 60px;
+    }
+
+    .form__status {
+        text-align: center;
+    }
+}

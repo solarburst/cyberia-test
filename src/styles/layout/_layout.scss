@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Rubik", sans-serif;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1240px;
+}
+
+main {
+    padding-top: 164px;
+}
+
+body {
+    background: linear-gradient(180deg, #24252F 0%, #31313F 36.46%, #2F303D 44.58%, #242530 100%);
+    min-height: 150vh;
+}
+
+@media screen and (max-width: 1240px) {
+    .container {
+        max-width: 840px;
+    }
+
+    .main {
+        padding-top: 120px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .container {
+        max-width: 328px;
+    }
+
+    .main {
+        padding-top: 120px;
+    }
+}

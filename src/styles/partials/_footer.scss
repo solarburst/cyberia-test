@@ -1,0 +1,141 @@
+.footer {
+    background-color: $dark-gray;
+
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        padding: 120px 0;
+    }
+
+    &__logo {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-icon {
+            cursor: pointer;
+        
+            path {
+                fill: $primary-white;
+                transition: fill .3s;
+            }
+        
+            &:hover path {
+                fill: $primary-blue;
+            }
+        }
+
+        span {
+            font-size: 16px;
+            font-weight: 500;
+            color: $text-white;
+            padding-bottom: 4px;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        justify-content: space-between;
+        gap: 100px;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            li {
+                width: fit-content;
+            }
+        }
+
+        &-list {
+            font-size: 18px;
+            font-weight: 300;
+            color: $text-white;
+
+            li {
+                padding-bottom: 4px;
+            }
+        }
+    }
+
+    &__links {
+        font-size: 16px;
+        font-weight: 300;
+        color: $text-white;
+        list-style-type: none;
+
+        li {
+            width: fit-content;
+        }
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    .footer__content {
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .footer__copyright {
+        margin: 0 auto;
+        
+        ul li {
+            margin: 0 auto;
+
+            .link br {
+                display: none;
+            }
+        }
+    }
+
+    .footer__logo {
+        gap: 28px;
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .footer__content {
+        flex-direction: column;
+    }
+
+    .footer__contacts {
+        gap: 20px;
+
+        &-list {
+            font-size: 14px;
+            gap: 28px;
+        }
+    }
+
+    .footer__links {
+        font-size: 14px;
+
+        li .link {
+            font-size: 14px;
+            text-align: center;
+        }
+    }
+
+    .footer__logo {
+        align-items: center;
+        gap: 12px;
+
+        span {
+            text-align: center;
+        }
+    }
+
+    .footer__copyright {
+        ul li {
+            .link {
+                display: block;
+            }
+
+            .link br {
+                display: block;
+            }
+        }
+    }
+}

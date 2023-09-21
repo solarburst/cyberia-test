@@ -1,0 +1,39 @@
+.breadcrumbs {
+    &__parent {
+        text-decoration: none;
+        color: $crumb-white;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    &__parent::after {
+        display: inline-block;
+        margin: 0 4px;
+        content: "/";
+    }
+
+    &__parent {
+        position: relative;
+    }
+
+    &__parent::before {
+        background-color: transparent;
+        content: "";
+        height: 1px;
+        position: absolute;
+        top: 21px;
+        transition: background-color .1s,width .2s;
+        width: 0;
+    }
+
+    &__parent:hover::before {
+        background-color: $crumb-white;
+        width: calc(100% - 16px);
+    }
+
+    &__crumb {
+        color: $crumb-gray;
+        font-size: 18px;
+        font-weight: 300;
+    }
+}
